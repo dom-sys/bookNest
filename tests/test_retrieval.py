@@ -14,6 +14,18 @@ class RetrievalTests(unittest.TestCase):
         self.assertEqual(result[0]["text"], chapters[0][1])
         self.assertEqual(result[0]["source"], "Chapter 1, paragraph 2")
 
+    def test_common_words_alone_do_not_make_a_passage_relevant(self):
+        chapters = [[
+            "Mira found a brass key beside the bookshop window.",
+            "Jonah carried a box of poetry books into the shop.",
+        ]]
+        result = find_passages(chapters, 1, "WHO found THE brass key?")
+        self.assertEqual([item["paragraph"] for item in result], [1])
+        self.assertEqual(result[0]["text"], chapters[0][0])
+
+    def test_question_with_only_stop_words_returns_no_matches(self):
+        self.assertEqual(find_passages([["The key was in a box."]], 1, "THE of a?"), [])
+
     def test_unread_chapter_is_not_even_tokenized(self):
         unread = "The secret owner of the brass key was Jonah."
         with patch("booknest.retrieval.tokens", wraps=tokens) as tokenize:

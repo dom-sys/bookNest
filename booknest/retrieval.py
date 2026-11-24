@@ -10,9 +10,22 @@ from math import sqrt
 import re
 
 
+# A small starter list: keep meaningful words such as "not" and "never".
+STOP_WORDS = {
+    "a", "an", "the", "and", "or", "of", "to", "in", "on", "at", "for", "with",
+    "is", "are", "was", "were", "be", "been", "do", "does", "did",
+    "who", "what", "when", "where", "why", "how",
+}
+
+
 def tokens(text):
-    """Split text into lowercase words, ignoring punctuation."""
-    return re.findall(r"\w+", text.lower())
+    """Return lowercase words, excluding punctuation and common stop words."""
+    words = re.findall(r"\w+", text.lower())
+    meaningful_words = []
+    for word in words:
+        if word not in STOP_WORDS:
+            meaningful_words.append(word)
+    return meaningful_words
 
 
 def similarity(question_words, passage_words):
