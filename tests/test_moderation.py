@@ -1,7 +1,7 @@
 """Tests for Subsystem 4 (Reviews, Warnings & Conduct): taboo-word moderation."""
 import unittest
 
-from conduct.moderation import filter_comment, normalize
+from booknest.moderation import filter_comment, normalize
 
 
 class Normalize(unittest.TestCase):
