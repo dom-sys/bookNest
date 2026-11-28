@@ -1,4 +1,4 @@
-#BookNest 
+# BookNest 
 
 BookNest in an AI-enabled desktop bookstore application built with Python and Tkinter. It stores data locally using JSONL files and transaction journal. 
 
