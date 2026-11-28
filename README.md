@@ -3,7 +3,7 @@
 BookNest is an AI-enabled desktop bookstore application built with Python and Tkinter. It stores data locally using JSONL files and transaction journal. 
 
 
-## Feautures 
+## Features 
 - User registration and face-based authentication
 - Administrator recovery and account management
 - Book browsing, search, and recommendations
