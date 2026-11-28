@@ -1,9 +1,9 @@
 # BookNest 
 
-BookNest in an AI-enabled desktop bookstore application built with Python and Tkinter. It stores data locally using JSONL files and transaction journal. 
+BookNest is an AI-enabled desktop bookstore application built with Python and Tkinter. It stores data locally using JSONL files and transaction journal. 
 
 
-##Feautures 
+## Feautures 
 - User registration and face-based authentication
 - Administrator recovery and account management
 - Book browsing, search, and recommendations
@@ -19,9 +19,18 @@ BookNest in an AI-enabled desktop bookstore application built with Python and Tk
 - Optional: Ollama for model-generated answers
 
 On some Linux distributions, Tkinter requires a separate operating-system package, such as `python3-tk`.
-## Run BookNest
 
-With the virtual environment activated, run:
+## Windows Setup
+
+Download and extract the repository. Open Command Prompt in the folder containing `requirements-face.txt`.
+
+```bat
+py -m venv .venv
+.venv\Scripts\activate
+python -m pip install -r requirements-face.txt
+```
+
+## Run BookNest
 
 ```bat
 python -m booknest --seed
